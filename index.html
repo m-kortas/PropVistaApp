@@ -23,7 +23,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--light);
-            margin: 0; /* Ensure no default body margin */
+            margin: 0;
             padding: 0;
         }
 
@@ -33,7 +33,7 @@
 
         .hero-section {
             min-height: 65vh;
-            padding-top: 80px; /* Account for fixed navbar */
+            padding-top: 80px;
         }
 
         .feature-card {
@@ -45,12 +45,12 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
-        /* Container for the iframe, hidden by default */
+
         .app-container {
-            height: calc(100vh - 80px); /* Full viewport height minus navbar */
-            display: none; /* Hidden initially */
-            margin-top: 80px; /* Account for fixed navbar */
-            overflow: hidden; /* Hide potential scrollbars from container */
+            height: calc(100vh - 80px);
+            display: none;
+            margin-top: 80px;
+            overflow: hidden;
         }
 
         #appFrame {
@@ -59,11 +59,11 @@
             border: none;
         }
 
-        /* Landing page content container */
+
         .landing-content {
-            /* No explicit height needed, flows naturally */
-             padding-top: 80px; /* Account for fixed navbar */
-             display: block; /* Visible initially */
+
+            padding-top: 80px;
+            display: block;
         }
 
         @keyframes fadeIn {
@@ -72,44 +72,39 @@
         }
 
         .animate-fade-in {
-            opacity: 0; /* Start hidden */
-            /* Animation applied via JS now */
+            opacity: 0;
+
         }
 
         .delay-100 { transition-delay: 0.1s; }
         .delay-200 { transition-delay: 0.2s; }
         .delay-300 { transition-delay: 0.3s; }
         .delay-400 { transition-delay: 0.4s; }
-        .delay-500 { transition-delay: 0.5s; } /* Added delay */
+        .delay-500 { transition-delay: 0.5s; }
 
-        /* Responsive adjustments */
+
         @media (max-width: 768px) {
             .hero-section {
                 min-height: 50vh;
             }
             .app-container {
-                 margin-top: 80px; /* Adjust if navbar height changes */
-                 height: calc(100vh - 80px);
+                margin-top: 80px;
+                height: calc(100vh - 80px);
             }
-             .landing-content {
-                 padding-top: 80px;
-             }
+            .landing-content {
+                padding-top: 80px;
+            }
         }
-         /* Style for fixed navbar */
-         nav {
-             height: 80px; /* Match h-20 */
-         }
-          .disclaimer-box {
-             background-color: #fffbeb; /* Light yellow */
-             border: 1px solid #fde68a; /* Yellow border */
-             color: #92400e; /* Dark yellow/brown text */
-             padding: 1rem;
-             border-radius: 0.5rem;
-             margin-top: 1.5rem;
-          }
-     </style>
- </head>
- <body>
+
+            nav {
+                height: 80px;
+            }
+
+
+
+    </style>
+</head>
+<body>
     <nav class="bg-white shadow-md fixed w-full z-50 top-0 left-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
@@ -122,6 +117,7 @@
                     <button id="loginBtn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 transition-all">
                         Login / App
                     </button>
+
                 </div>
             </div>
         </div>
@@ -129,29 +125,29 @@
 
     <div id="landingContent" class="landing-content">
         <section class="hero-section gradient-bg text-white flex items-center">
-             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-                 <div class="grid md:grid-cols-2 gap-12 items-center">
-                     <div class="animate-fade-in">
-                         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
-                             AI-Assisted Strata Report Summaries
-                         </h1>
-                         <p class="mt-6 text-xl text-indigo-100">
-                             Simplify complex strata reports. Our AI tool helps you locate key information and generate summaries to aid your understanding.
-                         </p>
-                         <div class="mt-8 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-                             <button id="demoBtn" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg transition-all">
-                                 Launch Summary Tool
-                             </button>
-                             <button id="learnMoreBtn" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-800 bg-opacity-60 hover:bg-opacity-70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg transition-all">
-                                 Learn More
-                             </button>
-                         </div>
-                     </div>
-                     <div class="animate-fade-in delay-200">
-                         <img src="https://picsum.photos/seed/propvistahero/600/400" alt="AI Analysis Dashboard" class="w-full h-auto rounded-lg shadow-2xl">
-                     </div>
-                 </div>
-             </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-fade-in">
+                        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
+                            AI-Assisted Strata Report Summaries
+                        </h1>
+                        <p class="mt-6 text-xl text-indigo-100">
+                            Simplify complex strata reports. Our AI tool helps you locate key information and generate summaries to aid your understanding.
+                        </p>
+                        <div class="mt-8 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+                            <button id="demoBtn" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg transition-all">
+                                Launch Summary Tool
+                            </button>
+                            <button id="learnMoreBtn" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-800 bg-opacity-60 hover:bg-opacity-70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg transition-all">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                    <div class="animate-fade-in delay-200">
+                        <img src="https://picsum.photos/seed/propvistahero/600/400" alt="AI Analysis Dashboard" class="w-full h-auto rounded-lg shadow-2xl">
+                    </div>
+                </div>
+            </div>
          </section>
 
         <section id="features" class="py-16 bg-white">
@@ -203,7 +199,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+         </section>
 
         <section id="how-it-works" class="py-16 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -227,7 +223,7 @@
                              </p>
                          </div>
 
-                        <div class="text-center animate-fade-in delay-300">
+                         <div class="text-center animate-fade-in delay-300">
                              <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-indigo-600 text-white mb-6 shadow-lg">
                                  <span class="text-2xl font-bold">2</span>
                              </div>
@@ -237,7 +233,7 @@
                              </p>
                          </div>
 
-                        <div class="text-center animate-fade-in delay-400">
+                         <div class="text-center animate-fade-in delay-400">
                              <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-indigo-600 text-white mb-6 shadow-lg">
                                  <span class="text-2xl font-bold">3</span>
                              </div>
@@ -248,207 +244,212 @@
                          </div>
                      </div>
 
-                                     
-                  <div class="mt-12 animate-fade-in delay-500">
-                      
+
+                     <div class="mt-12 animate-fade-in delay-500">
+
                      </div>
 
                 </div>
             </div>
-        </section>
+         </section>
 
-        
+
 
         <section class="py-16 gradient-bg text-white">
-             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                 <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl animate-fade-in">
-                     Ready to simplify your strata report review?
-                 </h2>
-                 <p class="mt-4 text-xl text-indigo-100 max-w-3xl mx-auto animate-fade-in delay-100">
-                     Use PropVista's AI tool to assist in understanding your strata documents. Remember to always verify information and consult professionals.
-                 </p>
-                 <div class="mt-8 flex justify-center animate-fade-in delay-200">
-                     <button id="ctaBtn" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg transition-all">
-                         Try the Summary Tool
-                     </button>
-                 </div>
-             </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl animate-fade-in">
+                    Ready to simplify your strata report review?
+                </h2>
+                <p class="mt-4 text-xl text-indigo-100 max-w-3xl mx-auto animate-fade-in delay-100">
+                    Use PropVista's AI tool to assist in understanding your strata documents. Remember to always verify information and consult professionals.
+                </p>
+                <div class="mt-8 flex justify-center animate-fade-in delay-200">
+                    <button id="ctaBtn" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg transition-all">
+                        Try the Summary Tool
+                    </button>
+                </div>
+            </div>
          </section>
-        <div></div>
-<br>
-         <div class="bg-indigo-50 border border-indigo-200 text-indigo-900 p-4 rounded-lg max-w-4xl mx-auto text-sm shadow-sm">
-                           <h4 class="font-bold text-lg mb-2 text-indigo-800"><i class="fas fa-exclamation-triangle mr-2 text-indigo-600"></i>Important Disclaimer</h4>
-                             <p>The AI-generated analysis and summaries provided by PropVista are for <strong>informational purposes only</strong> to assist your review of the original strata report. They are <strong>not legal, financial, investment, or building advice,</strong> nor professional recommendations.</p>
-                             <p class="mt-2">Accuracy and completeness are not guaranteed due to the complexities of AI and potential variations in report formats. Information may be incomplete or inaccurate.</p>
-                             <p class="mt-2"><strong>Users MUST verify all information independently by carefully reviewing the original strata report and consulting with qualified professionals</strong> (such as lawyers, conveyancers, accountants, and building inspectors) before making any property-related decisions.</p>
-                             <p class="mt-2">PropVista does not guarantee the suitability of the generated information for any specific purpose. Reliance on this information is solely at the user's own risk.</p>
-                        <p class="mt-2">By using this application, you acknowledge these limitations and agree to our <a href="#legal-terms" class="underline hover:text-indigo-700">Terms of Service</a> and <a href="#legal-privacy" class="underline hover:text-indigo-700">Privacy Policy</a>.</p>
-                          
-                         </div> <br>
-          </div>
 
-        <footer class="bg-gray-900 text-white py-12">
-             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                 <div class="grid md:grid-cols-4 gap-8">
-                     <div>
-                         <h3 class="text-xl font-bold mb-4">PropVista</h3>
-                         <p class="text-gray-400 text-sm">
-                             An AI tool designed to assist users in summarising and understanding Australian strata reports. Informational purposes only.
-                         </p>
-                     </div>
-                     <div>
-                         <h4 class="text-lg font-medium mb-4">Quick Links</h4>
-                         <ul class="space-y-2 text-gray-400 text-sm">
-                             <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
-                             <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
-                             <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li> <li><a href="#" id="footerLoginBtn" class="hover:text-white transition-colors">Login / App</a></li>
-                         </ul>
-                     </div>
-                     <div>
-                         <h4 class="text-lg font-medium mb-4">Legal</h4>
-                         <ul class="space-y-2 text-gray-400 text-sm">
-                             <li><a href="#legal-privacy" id="privacyLinkFooter" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                             <li><a href="#legal-terms" id="termsLinkFooter" class="hover:text-white transition-colors">Terms of Service</a></li>
-                             <li><a href="#legal-disclaimer" id="disclaimerLinkFooter" class="hover:text-white transition-colors">Disclaimer</a></li>
-                         </ul>
-                     </div>
-                     <div>
-                         <h4 class="text-lg font-medium mb-4">Connect</h4>
-                         <ul class="space-y-2 text-gray-400 text-sm">
-                             <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li> <li><a href="#" class="hover:text-white transition-colors">Support</a></li> </ul>
-                         <div class="mt-6 flex space-x-4">
-                             <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                                 <i class="fab fa-twitter text-xl"></i> <span class="sr-only">Twitter</span>
-                             </a>
-                             <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                                 <i class="fab fa-linkedin text-xl"></i> <span class="sr-only">LinkedIn</span>
-                             </a>
-                             <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                                 <i class="fab fa-facebook text-xl"></i> <span class="sr-only">Facebook</span>
-                             </a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-                     <p>&copy; 2025 PropVista. All rights reserved. Website content is informational and does not constitute legal or financial advice.</p>
-                     <div id="legal-privacy" class="sr-only">Privacy Policy Section Target</div>
-                     <div id="legal-terms" class="sr-only">Terms of Service Section Target</div>
-                     <div id="legal-disclaimer" class="sr-only">Disclaimer Section Target</div>
-                 </div>
-             </div>
-         </footer>
-    </div>
+        <section id="disclaimer-section" class="py-12 bg-white"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white border border-gray-200 text-gray-700 p-6 rounded-lg max-w-4xl mx-auto text-sm shadow-md">
+                    <h4 class="font-bold text-lg mb-3 text-gray-800 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-2 text-yellow-500 flex-shrink-0"></i>
+                        Important Disclaimer
+                    </h4>
+                    <p class="mb-2">The AI-generated analysis and summaries provided by PropVista are for <strong>informational purposes only</strong> to assist your review of the original strata report. They are <strong>not legal, financial, investment, or building advice,</strong> nor professional recommendations.</p>
+                    <p class="mb-2">Accuracy and completeness are not guaranteed due to the complexities of AI and potential variations in report formats. Information may be incomplete or inaccurate.</p>
+                    <p class="mb-2"><strong>Users MUST verify all information independently by carefully reviewing the original strata report and consulting with qualified professionals</strong> (such as lawyers, conveyancers, accountants, and building inspectors) before making any property-related decisions.</p>
+                    <p class="mb-2">PropVista does not guarantee the suitability of the generated information for any specific purpose. Reliance on this information is solely at the user's own risk.</p>
+                    <p class="mt-3">By using this application, you acknowledge these limitations and agree to our <a href="#legal-terms" class="underline text-indigo-600 hover:text-indigo-800">Terms of Service</a> and <a href="#legal-privacy" class="underline text-indigo-600 hover:text-indigo-800">Privacy Policy</a>.</p>
+                </div>
+            </div>
+         </section>
+         </div> <footer class="bg-gray-900 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">PropVista</h3>
+                        <p class="text-gray-400 text-sm">
+                            An AI tool designed to assist users in summarising and understanding Australian strata reports. Informational purposes only.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-medium mb-4">Quick Links</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                            <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li> <li><a href="#" id="footerLoginBtn" class="hover:text-white transition-colors">Login / App</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-medium mb-4">Legal</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li><a href="#legal-privacy" id="privacyLinkFooter" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="#legal-terms" id="termsLinkFooter" class="hover:text-white transition-colors">Terms of Service</a></li>
+                            <li><a href="#legal-disclaimer" id="disclaimerLinkFooter" class="hover:text-white transition-colors">Disclaimer</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-medium mb-4">Connect</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li> <li><a href="#" class="hover:text-white transition-colors">Support</a></li> </ul>
+                        <div class="mt-6 flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-twitter text-xl"></i> <span class="sr-only">Twitter</span>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-linkedin text-xl"></i> <span class="sr-only">LinkedIn</span>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-facebook text-xl"></i> <span class="sr-only">Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                    <p>&copy; 2025 PropVista. All rights reserved. Website content is informational and does not constitute legal or financial advice.</p>
+                    <div id="legal-privacy" class="sr-only">Privacy Policy Section Target</div>
+                    <div id="legal-terms" class="sr-only">Terms of Service Section Target</div>
+                    <div id="legal-disclaimer" class="sr-only">Disclaimer Section Target (maybe point to #disclaimer-section instead?)</div>
+                </div>
+            </div>
+     </footer>
 
     <div id="appContainer" class="app-container">
         <iframe id="appFrame" src="https://australianstrata.streamlit.app?embed=true&toolbar=hidden&embedded=true"></iframe>
     </div>
 
     <script>
-         document.addEventListener('DOMContentLoaded', function() {
-             const landingContent = document.getElementById('landingContent');
-             const appContainer = document.getElementById('appContainer');
-             const appFrame = document.getElementById('appFrame');
+        document.addEventListener('DOMContentLoaded', function() {
+            const landingContent = document.getElementById('landingContent');
+            const appContainer = document.getElementById('appContainer');
+            const appFrame = document.getElementById('appFrame');
+            const footerElement = document.querySelector('footer');
 
-             // --- Animation on scroll ---
-             try {
-                 const observer = new IntersectionObserver((entries) => {
-                     entries.forEach(entry => {
-                         if (entry.isIntersecting) {
-                             entry.target.style.opacity = 1;
-                             entry.target.style.transform = 'translateY(0)';
-                             observer.unobserve(entry.target); // Unobserve after animating
-                         }
-                     });
-                 }, { threshold: 0.1 });
 
-                 document.querySelectorAll('.animate-fade-in').forEach(el => {
-                     el.style.opacity = 0;
-                     el.style.transform = 'translateY(20px)';
-                     el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out'; // Smooth transition
-                      // Add delays from classes
-                      const delayClass = Array.from(el.classList).find(cls => cls.startsWith('delay-'));
-                      if (delayClass) {
-                          const delayTime = parseInt(delayClass.split('-')[1], 10) / 1000; // Convert ms format to seconds
-                          el.style.transitionDelay = `${delayTime}s`;
-                      }
-                     observer.observe(el);
-                 });
-             } catch (e) {
-                 console.error("IntersectionObserver failed:", e);
-                  document.querySelectorAll('.animate-fade-in').forEach(el => { el.style.opacity = 1; el.style.transform = 'translateY(0)'; });
-             }
+            try {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = 1;
+                            entry.target.style.transform = 'translateY(0)';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
 
-             // --- App Launch Function ---
-             // --- App Launch Function ---
-            let iframeLoaded = false; // Flag to prevent multiple reloads
-            const footerElement = document.querySelector('footer'); // Get the footer element
+                document.querySelectorAll('.animate-fade-in').forEach(el => {
+                    el.style.opacity = 0;
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                    const delayClass = Array.from(el.classList).find(cls => cls.startsWith('delay-'));
+                    if (delayClass) {
+                        const delayTime = parseInt(delayClass.split('-')[1], 10) / 1000;
+                        el.style.transitionDelay = `${delayTime}s`;
+                    }
+                    observer.observe(el);
+                });
+            } catch (e) {
+                console.error("IntersectionObserver failed:", e);
+                 document.querySelectorAll('.animate-fade-in').forEach(el => { el.style.opacity = 1; el.style.transform = 'translateY(0)'; });
+            }
+
+
+            let iframeLoaded = false;
 
             function showApp() {
                 console.log("Showing App...");
                 if (landingContent) {
                     landingContent.style.display = 'none';
                 }
-                if (footerElement) { // Check if footer element exists
-                    footerElement.style.display = 'none'; // *** ADD THIS LINE TO HIDE FOOTER ***
+                if (footerElement) {
+                    footerElement.style.display = 'none';
                 }
                 if (appContainer) {
                     appContainer.style.display = 'block';
 
-                    // Reload iframe src *once* when first shown to help with init/auth
-                    if (!iframeLoaded && appFrame.src) {
-                         const currentSrc = appFrame.src;
-                         // Check if it already contains a timestamp to avoid appending multiple
-                         const url = new URL(currentSrc);
-                         url.searchParams.delete('_t'); // Remove old timestamp if exists
-                         url.searchParams.append('_t', Date.now()); // Add fresh timestamp
 
-                         console.log("Reloading iframe src:", url.toString());
-                         appFrame.src = url.toString();
-                         iframeLoaded = true; // Set flag
+                    if (!iframeLoaded && appFrame.src) {
+                        const currentSrc = appFrame.src;
+
+                        const url = new URL(currentSrc);
+                        url.searchParams.delete('_t');
+                        url.searchParams.append('_t', Date.now());
+
+                        console.log("Reloading iframe src:", url.toString());
+                        appFrame.src = url.toString();
+                        iframeLoaded = true;
                      }
                 }
-                window.scrollTo(0, 0); // Scroll to top
+                window.scrollTo(0, 0);
             }
 
-             // --- Button Click Handlers ---
-             function addButtonListener(id, callback) {
-                 const button = document.getElementById(id);
-                 if (button) {
-                     button.addEventListener('click', callback);
-                 }
-             }
 
-             addButtonListener('loginBtn', showApp);
-             addButtonListener('getStartedBtnNav', showApp); // Updated ID
-             addButtonListener('demoBtn', showApp);
-             addButtonListener('ctaBtn', showApp);
-             addButtonListener('footerLoginBtn', showApp);
+            function addButtonListener(id, callback) {
+                const button = document.getElementById(id);
+                if (button) {
+                    button.addEventListener('click', callback);
+                }
+            }
 
-             // --- Smooth Scrolling for Internal Links (Including Footer Legal Links) ---
+            addButtonListener('loginBtn', showApp);
+
+            addButtonListener('demoBtn', showApp);
+            addButtonListener('ctaBtn', showApp);
+            addButtonListener('footerLoginBtn', showApp);
+
+
             function addSmoothScrollListener(selector, targetId, isLegalLink = false) {
                 document.querySelectorAll(selector).forEach(link => {
+
                     const targetElement = document.getElementById(targetId);
-                    if (link && targetElement) {
+
+                    const effectiveTargetElement = (targetId === 'legal-disclaimer') ? document.getElementById('disclaimer-section') : targetElement;
+
+                    if (link && effectiveTargetElement) {
                         link.addEventListener('click', function(event) {
                             event.preventDefault();
                             if (landingContent.style.display !== 'none') {
-                                if (isLegalLink) {
-                                    // For legal links, maybe just scroll to the footer or a dedicated section if you create one
-                                    // For now, just scroll to the footer area as a placeholder action
-                                    console.warn(`Scrolling to legal section placeholder: ${targetId}. Replace with actual link/page.`);
+                                if (isLegalLink && (targetId === 'legal-privacy' || targetId === 'legal-terms')) {
+
+
+                                    console.warn(`Scrolling to legal section placeholder in footer: ${targetId}. Replace with actual link/page.`);
                                     document.querySelector('footer').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                    // Ideally, these links would go to separate pages or modals.
                                 } else {
-                                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                }
+
+                                    effectiveTargetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                 }
                             } else if (isLegalLink) {
-                                // If app is visible, legal links should ideally still work (e.g., open a modal or new tab)
+
                                 console.warn(`Legal link clicked while app visible: ${targetId}. Implement modal or new tab.`);
-                                // As a fallback, maybe link to a placeholder URL
-                                // window.open('/' + targetId + '.html', '_blank'); // Example
+
+
                             }
                         });
-                    }
+                     } else if (link && !effectiveTargetElement) {
+                         console.warn(`Smooth scroll target element not found for selector "${selector}" targeting "#${targetId}"`);
+                     }
                 });
             }
 
@@ -456,19 +457,19 @@
             addSmoothScrollListener('a[href="#features"]', 'features');
             addSmoothScrollListener('a[href="#how-it-works"]', 'how-it-works');
 
-            // Add listeners for footer legal links (linking to placeholder divs for now)
-            addSmoothScrollListener('a[href="#legal-privacy"]', 'legal-privacy', true);
-            addSmoothScrollListener('a[href="#legal-terms"]', 'legal-terms', true);
-            addSmoothScrollListener('a[href="#legal-disclaimer"]', 'legal-disclaimer', true);
 
-            // Make disclaimer box links also scroll (or point to real pages later)
+            addSmoothScrollListener('#privacyLinkFooter', 'legal-privacy', true);
+            addSmoothScrollListener('#termsLinkFooter', 'legal-terms', true);
+            addSmoothScrollListener('#disclaimerLinkFooter', 'legal-disclaimer', true);
+
+
             const disclaimerBox = document.querySelector('.disclaimer-box');
-            if(disclaimerBox){
-                addSmoothScrollListener('.disclaimer-box a[href="#legal-terms"]', 'legal-terms', true);
-                addSmoothScrollListener('.disclaimer-box a[href="#legal-privacy"]', 'legal-privacy', true);
-            }
+             if(disclaimerBox){
+                 addSmoothScrollListener('.disclaimer-box a[href="#legal-terms"]', 'legal-terms', true);
+                 addSmoothScrollListener('.disclaimer-box a[href="#legal-privacy"]', 'legal-privacy', true);
+             }
 
-         });
+        });
     </script>
 </body>
 </html>
