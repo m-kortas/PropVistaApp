@@ -115,7 +115,7 @@
                 </div>
                 <div class="flex items-center">
                     <button id="loginBtn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 transition-all">
-                        Login  
+                        Login / App
                     </button>
 
                 </div>
@@ -379,31 +379,24 @@
             let iframeLoaded = false;
 
             function showApp() {
-                console.log("Showing App...");
-                if (landingContent) {
-                    landingContent.style.display = 'none';
-                }
-                if (footerElement) {
-                    footerElement.style.display = 'none';
-                }
-                if (appContainer) {
-                    appContainer.style.display = 'block';
-
-
-                    if (!iframeLoaded && appFrame.src) {
-                        const currentSrc = appFrame.src;
-
-                        const url = new URL(currentSrc);
-                        url.searchParams.delete('_t');
-                        url.searchParams.append('_t', Date.now());
-
-                        console.log("Reloading iframe src:", url.toString());
-                        appFrame.src = url.toString();
-                        iframeLoaded = true;
-                     }
-                }
-                window.scrollTo(0, 0);
+            console.log("Showing App...");
+            if (landingContent) {
+                landingContent.style.display = 'none';
             }
+            if (footerElement) {
+                footerElement.style.display = 'none';
+            }
+            if (appContainer) {
+                appContainer.style.display = 'block';
+                
+                // Only set the src if it hasn't been loaded yet
+                if (!iframeLoaded) {
+                    appFrame.src = "https://australianstrata.streamlit.app?embed=true&toolbar=hidden&embedded=true";
+                    iframeLoaded = true;
+                }
+            }
+            window.scrollTo(0, 0);
+        }
 
 
             function addButtonListener(id, callback) {
