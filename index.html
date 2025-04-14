@@ -319,10 +319,10 @@
                             </svg>
                         </button>
                         <div class="dropdown-content">
-                            <a href="short_sample.pdf",  target="_blank", download class="flex items-center">
+                            <a href="short_sample.pdf" download class="flex items-center">
                                 <i class="fas fa-file-pdf text-red-500 mr-2"></i> Download Short Sample Report
                             </a>
-                            <a href="long_sample.pdf" ,  target="_blank", download class="flex items-center">
+                            <a href="long_sample.pdf" download class="flex items-center">
                                 <i class="fas fa-file-pdf text-red-500 mr-2"></i> Download Long Sample Report
                             </a>
                             <a href="#" id="ctaAppBtn" class="flex items-center">
@@ -334,20 +334,28 @@
             </div>
          </section>
 
-        <section id="disclaimer-section" class="py-12 bg-white"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white border border-gray-200 text-gray-700 p-6 rounded-lg max-w-4xl mx-auto text-sm shadow-md">
-                    <h4 class="font-bold text-lg mb-3 text-gray-800 flex items-center">
-                        <i class="fas fa-exclamation-triangle mr-2 text-yellow-500 flex-shrink-0"></i>
-                        Important Disclaimer
-                    </h4>
-                    <p class="mb-2">The AI-generated analysis and summaries provided by PropVista are for <strong>informational purposes only</strong> to assist your review of the original strata report. They are <strong>not legal, financial, investment, or building advice,</strong> nor professional recommendations.</p>
-                    <p class="mb-2">Accuracy and completeness are not guaranteed due to the complexities of AI and potential variations in report formats. Information may be incomplete or inaccurate.</p>
-                    <p class="mb-2"><strong>Users MUST verify all information independently by carefully reviewing the original strata report and consulting with qualified professionals</strong> (such as lawyers, conveyancers, accountants, and building inspectors) before making any property-related decisions.</p>
-                    <p class="mb-2">PropVista does not guarantee the suitability of the generated information for any specific purpose. Reliance on this information is solely at the user's own risk.</p>
-                    <p class="mt-3">By using this application, you acknowledge these limitations and agree to our <a href="#legal-terms" class="underline text-indigo-600 hover:text-indigo-800">Terms of Service</a> and <a href="#legal-privacy" class="underline text-indigo-600 hover:text-indigo-800">Privacy Policy</a>.</p>
+        <section id="disclaimer-section" class="py-8 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white border border-gray-200 text-gray-700 p-4 rounded-lg max-w-4xl mx-auto text-sm shadow-sm">
+            <div class="flex items-start">
+                <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-3 flex-shrink-0"></i>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-1">Disclaimer</h4>
+                    <p class="text-gray-600">AI-generated summaries are for informational purposes only. Not legal, financial, or building advice. <a href="#" id="readMoreBtn" class="text-indigo-600 hover:text-indigo-800 font-medium">Read more</a></p>
+                    
+                    <div id="fullDisclaimer" class="hidden mt-3 text-gray-600 border-t border-gray-100 pt-3">
+                        <p class="mb-2">Accuracy and completeness are not guaranteed due to the complexities of AI and potential variations in report formats.</p>
+                        <p class="mb-2"><strong>Users MUST verify all information independently</strong> by carefully reviewing the original strata report and consulting with qualified professionals before making any property-related decisions.</p>
+                        <p class="mb-2">PropVista does not guarantee the suitability of the generated information for any specific purpose. Reliance on this information is solely at the user's own risk.</p>
+                        <p class="mt-3">By using this application, you acknowledge these limitations and agree to our <a href="#legal-terms" class="underline text-indigo-600 hover:text-indigo-800">Terms of Service</a> and <a href="#legal-privacy" class="underline text-indigo-600 hover:text-indigo-800">Privacy Policy</a>.</p>
+                        <button id="readLessBtn" class="text-indigo-600 hover:text-indigo-800 font-medium mt-2">Show less</button>
+                    </div>
                 </div>
             </div>
-         </section>
+        </div>
+    </div>
+</section>
+        
          </div> <footer class="bg-gray-900 text-white py-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-4 gap-8">
@@ -409,6 +417,24 @@
             const appContainer = document.getElementById('appContainer');
             const appFrame = document.getElementById('appFrame');
             const footerElement = document.querySelector('footer');
+
+            const readMoreBtn = document.getElementById('readMoreBtn');
+            const readLessBtn = document.getElementById('readLessBtn');
+            const fullDisclaimer = document.getElementById('fullDisclaimer');
+            
+            if (readMoreBtn && fullDisclaimer && readLessBtn) {
+                readMoreBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    fullDisclaimer.classList.remove('hidden');
+                    readMoreBtn.classList.add('hidden');
+                });
+                
+                readLessBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    fullDisclaimer.classList.add('hidden');
+                    readMoreBtn.classList.remove('hidden');
+                });
+            }
 
 
             try {
