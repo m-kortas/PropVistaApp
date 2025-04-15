@@ -33,7 +33,7 @@
 
         .hero-section {
             min-height: 65vh;
-            padding-top: 80px;
+            padding-top: 80px; /* Match nav height */
         }
 
         .feature-card {
@@ -45,11 +45,10 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
-
         .app-container {
-            height: calc(100vh - 80px);
+            height: calc(100vh - 80px); /* Adjust for nav height */
             display: none;
-            margin-top: 80px;
+            margin-top: 80px; /* Match nav height */
             overflow: hidden;
         }
 
@@ -59,10 +58,8 @@
             border: none;
         }
 
-
         .landing-content {
-
-            padding-top: 80px;
+            /* No padding-top here, handled by hero section */
             display: block;
         }
 
@@ -72,16 +69,17 @@
         }
 
         .animate-fade-in {
-            opacity: 0;
-
+            opacity: 0; /* Start hidden for JS animation */
         }
 
+        /* Delay utility classes for stagger animation */
         .delay-100 { transition-delay: 0.1s; }
         .delay-200 { transition-delay: 0.2s; }
         .delay-300 { transition-delay: 0.3s; }
         .delay-400 { transition-delay: 0.4s; }
         .delay-500 { transition-delay: 0.5s; }
 
+        /* Dropdown styles */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -91,11 +89,12 @@
             display: none;
             position: absolute;
             background-color: white;
-            min-width: 200px;
+            min-width: 260px; /* Adjusted width */
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
+            z-index: 10; /* Ensure it's above other content */
             border-radius: 0.375rem;
             overflow: hidden;
+            right: 0; /* Align to the right for CTA */
         }
 
         .dropdown:hover .dropdown-content {
@@ -108,12 +107,16 @@
             text-decoration: none;
             display: block;
             transition: background-color 0.2s;
+            white-space: nowrap; /* Prevent wrapping */
         }
 
         .dropdown-content a:hover {
             background-color: #f1f1f1;
         }
-
+        .dropdown-content a i {
+            width: 20px; /* Ensure icons align */
+            text-align: center;
+        }
 
         @media (max-width: 768px) {
             .hero-section {
@@ -123,24 +126,22 @@
                 margin-top: 80px;
                 height: calc(100vh - 80px);
             }
-            .landing-content {
-                padding-top: 80px;
-            }
             .dropdown-content {
-                width: 100%;
+                width: 100%; /* Full width on mobile */
                 left: 0;
+                min-width: unset;
             }
         }
 
-            nav {
-                height: 80px;
-            }
+        nav {
+             height: 80px; /* Fixed nav height */
+        }
     </style>
 </head>
 <body>
     <nav class="bg-white shadow-md fixed w-full z-50 top-0 left-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
+            <div class="flex justify-between h-20">  
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
                         <span class="text-3xl font-bold text-indigo-600">PropVista</span>
@@ -150,13 +151,12 @@
                     <button id="loginBtn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 transition-all">
                         Login / App
                     </button>
-
                 </div>
             </div>
         </div>
     </nav>
 
-    <div id="landingContent" class="landing-content">
+    <div id="landingContent" class="landing-content">  
         <section class="hero-section gradient-bg text-white flex items-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -170,19 +170,21 @@
                         <div class="mt-8 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
                             <div class="dropdown">
                                 <button class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg transition-all">
-                                    <span>Try Our Tool</span>
+                                    <span>Try Our Samples</span>  
                                     <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                     </svg>
                                 </button>
                                 <div class="dropdown-content">
-                                    <a href="short_sample.pdf", target="_blank",  download class="flex items-center">
-                                        <i class="fas fa-file-pdf text-red-500 mr-2"></i> Download Short Sample Report
-                                    </a>
-                                    <a href="long_sample.pdf" , target="_blank", download class="flex items-center">
-                                        <i class="fas fa-file-pdf text-red-500 mr-2"></i> Download Long Sample Report
-                                    </a>
-                                    
+                                     <a href="short_sample.pdf" target="_blank" download class="flex items-center">
+                                         <i class="fas fa-file-pdf text-red-500 mr-2"></i> Download Short Sample
+                                     </a>
+                                     <a href="long_sample.pdf" target="_blank" download class="flex items-center">
+                                         <i class="fas fa-file-pdf text-red-500 mr-2"></i> Download Long Sample
+                                     </a>
+                                      <a href="#" id="heroAppBtn" class="flex items-center">  
+                                          <i class="fas fa-rocket text-indigo-500 mr-2"></i> Launch Summary Tool
+                                      </a>
                                 </div>
                             </div>
                             <button id="learnMoreBtn" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-800 bg-opacity-60 hover:bg-opacity-70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg transition-all">
@@ -198,15 +200,15 @@
          </section>
 
         <section id="features" class="py-16 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center animate-fade-in">
-                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                        Understand Your Strata Report More Easily
-                    </h2>
-                    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-                        PropVista assists in navigating strata reports by helping to summarise key areas like finance, maintenance, and legal matters using AI.
-                    </p>
-                </div>
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center animate-fade-in">
+                     <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                         Understand Your Strata Report More Easily
+                     </h2>
+                     <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                         PropVista assists in navigating strata reports by helping to summarise key areas like finance, maintenance, and legal matters using AI.
+                     </p>
+                 </div>
 
                 <div class="mt-16 grid md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-lg shadow-lg p-6 feature-card animate-fade-in delay-200">
@@ -260,47 +262,47 @@
                  </div>
 
                 <div class="mt-16">
-                    <div class="grid md:grid-cols-3 gap-8 items-start"> <div class="text-center animate-fade-in delay-200">
+                     <div class="grid md:grid-cols-3 gap-8 items-start">
+
+                         <div class="text-center animate-fade-in delay-200">
                              <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-indigo-600 text-white mb-6 shadow-lg">
                                  <span class="text-2xl font-bold">1</span>
                              </div>
                              <h3 class="text-xl font-medium text-gray-900">Upload Your Strata Report</h3>
                              <p class="mt-4 text-gray-600">
-                                 Launch the tool, login, and upload your PDF strata report. <strong class="text-gray-700">You must ensure you have the right to upload and process the report.</strong> We implement data privacy measures including PII redaction before AI processing. See our Privacy Policy and T&Cs.
+                                 Launch the tool, login, and upload your PDF strata report. <strong class="text-gray-700">You must ensure you have the right to upload and process the report.</strong> We implement data privacy measures including PII redaction before AI processing.
+                                  See our <a href="privacy.html" target="_blank" class="text-indigo-600 hover:text-indigo-800 underline">Privacy Policy</a> and <a href="terms.html" target="_blank" class="text-indigo-600 hover:text-indigo-800 underline">T&Cs</a>.
                              </p>
                          </div>
 
                          <div class="text-center animate-fade-in delay-300">
-                             <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-indigo-600 text-white mb-6 shadow-lg">
-                                 <span class="text-2xl font-bold">2</span>
-                             </div>
-                             <h3 class="text-xl font-medium text-gray-900">AI Processing</h3>
-                             <p class="mt-4 text-gray-600">
-                                 Our AI processes the document text to help identify key information and prepare summaries.
-                             </p>
-                         </div>
+                            <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-indigo-600 text-white mb-6 shadow-lg">
+                                <span class="text-2xl font-bold">2</span>
+                            </div>
+                            <h3 class="text-xl font-medium text-gray-900">AI Processing</h3>
+                            <p class="mt-4 text-gray-600">
+                                Our AI processes the document text to help identify key information and prepare summaries.
+                            </p>
+                        </div>
 
                          <div class="text-center animate-fade-in delay-400">
-                             <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-indigo-600 text-white mb-6 shadow-lg">
-                                 <span class="text-2xl font-bold">3</span>
-                             </div>
-                             <h3 class="text-xl font-medium text-gray-900">Receive AI-Generated Summaries</h3>
-                             <p class="mt-4 text-gray-600">
-                                 Get AI-generated summaries and ask questions to assist your understanding, with references back to the original document.
-                             </p>
-                         </div>
-                     </div>
+                            <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-indigo-600 text-white mb-6 shadow-lg">
+                                <span class="text-2xl font-bold">3</span>
+                            </div>
+                            <h3 class="text-xl font-medium text-gray-900">Receive AI-Generated Summaries</h3>
+                            <p class="mt-4 text-gray-600">
+                                Get AI-generated summaries and ask questions to assist your understanding, with references back to the original document.
+                            </p>
+                        </div>
 
+                    </div>  
 
                      <div class="mt-12 animate-fade-in delay-500">
-
-                     </div>
+                    </div>
 
                 </div>
             </div>
-         </section>
-
-
+        </section>
 
         <section class="py-16 gradient-bg text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -311,104 +313,105 @@
                     Use PropVista's AI tool to assist in understanding your strata documents. Remember to always verify information and consult professionals.
                 </p>
                 <div class="mt-8 flex justify-center animate-fade-in delay-200">
-                    <div class="dropdown">
-                        <button id="ctaBtn" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg transition-all">
-                            Try Our Samples
-                            <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="short_sample.pdf" download class="flex items-center">
-                                <i class="fas fa-file-pdf text-red-500 mr-2"></i> Download Short Sample Report
-                            </a>
-                            <a href="long_sample.pdf" download class="flex items-center">
-                                <i class="fas fa-file-pdf text-red-500 mr-2"></i> Download Long Sample Report
-                            </a>
-                            <a href="#" id="ctaAppBtn" class="flex items-center">
-                                <i class="fas fa-rocket text-indigo-500 mr-2"></i> Launch Summary Tool
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                     <div class="dropdown">
+                         <button id="ctaBtn" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg transition-all">
+                             Try Our Tool
+                             <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                             </svg>
+                         </button>
+                         <div class="dropdown-content">
+                             <a href="short_sample.pdf" target="_blank" download class="flex items-center">
+                                 <i class="fas fa-file-pdf text-red-500 mr-2"></i> Download Short Sample
+                             </a>
+                             <a href="long_sample.pdf" target="_blank" download class="flex items-center">
+                                 <i class="fas fa-file-pdf text-red-500 mr-2"></i> Download Long Sample
+                             </a>
+                             <a href="#" id="ctaAppBtn" class="flex items-center">
+                                 <i class="fas fa-rocket text-indigo-500 mr-2"></i> Launch Summary Tool
+                             </a>
+                         </div>
+                     </div>
+                 </div>
             </div>
-         </section>
+        </section>
 
         <section id="disclaimer-section" class="py-8 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white border border-gray-200 text-gray-700 p-4 rounded-lg max-w-4xl mx-auto text-sm shadow-sm">
-            <div class="flex items-start">
-                <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-3 flex-shrink-0"></i>
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="bg-white border border-gray-200 text-gray-700 p-4 rounded-lg max-w-4xl mx-auto text-sm shadow-sm">
+                     <div class="flex items-start">
+                         <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-3 flex-shrink-0"></i>
+                         <div>
+                             <h4 class="font-semibold text-gray-800 mb-1">Disclaimer</h4>
+                             <p class="text-gray-600">AI-generated summaries are for informational purposes only. Not legal, financial, or building advice. <a href="#" id="readMoreBtn" class="text-indigo-600 hover:text-indigo-800 font-medium">Read more</a></p>
+
+                             <div id="fullDisclaimer" class="hidden mt-3 text-gray-600 border-t border-gray-100 pt-3">
+                                 <p class="mb-2">Accuracy and completeness are not guaranteed due to the complexities of AI and potential variations in report formats.</p>
+                                 <p class="mb-2"><strong>Users MUST verify all information independently</strong> by carefully reviewing the original strata report and consulting with qualified professionals before making any property-related decisions.</p>
+                                 <p class="mb-2">PropVista does not guarantee the suitability of the generated information for any specific purpose. Reliance on this information is solely at the user's own risk.</p>
+                                  <p class="mt-3">By using this application, you acknowledge these limitations and agree to our <a href="terms.html" target="_blank" class="underline text-indigo-600 hover:text-indigo-800">Terms of Service</a> and <a href="privacy.html" target="_blank" class="underline text-indigo-600 hover:text-indigo-800">Privacy Policy</a>.</p>
+                                 <button id="readLessBtn" class="text-indigo-600 hover:text-indigo-800 font-medium mt-2">Show less</button>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+    </div>  
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h4 class="font-semibold text-gray-800 mb-1">Disclaimer</h4>
-                    <p class="text-gray-600">AI-generated summaries are for informational purposes only. Not legal, financial, or building advice. <a href="#" id="readMoreBtn" class="text-indigo-600 hover:text-indigo-800 font-medium">Read more</a></p>
-                    
-                    <div id="fullDisclaimer" class="hidden mt-3 text-gray-600 border-t border-gray-100 pt-3">
-                        <p class="mb-2">Accuracy and completeness are not guaranteed due to the complexities of AI and potential variations in report formats.</p>
-                        <p class="mb-2"><strong>Users MUST verify all information independently</strong> by carefully reviewing the original strata report and consulting with qualified professionals before making any property-related decisions.</p>
-                        <p class="mb-2">PropVista does not guarantee the suitability of the generated information for any specific purpose. Reliance on this information is solely at the user's own risk.</p>
-                        <p class="mt-3">By using this application, you acknowledge these limitations and agree to our <a href="#legal-terms" class="underline text-indigo-600 hover:text-indigo-800">Terms of Service</a> and <a href="#legal-privacy" class="underline text-indigo-600 hover:text-indigo-800">Privacy Policy</a>.</p>
-                        <button id="readLessBtn" class="text-indigo-600 hover:text-indigo-800 font-medium mt-2">Show less</button>
+                    <h3 class="text-xl font-bold mb-4">PropVista</h3>
+                    <p class="text-gray-400 text-sm">
+                        An AI tool designed to assist users in summarising and understanding Australian strata reports. Informational purposes only.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>  
+                        <li><a href="#" id="footerLoginBtn" class="hover:text-white transition-colors">Login / App</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                         <li><a href="privacy.html" target="_blank" id="privacyLinkFooter" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" target="_blank" id="termsLinkFooter" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Connect</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i> <span class="sr-only">Twitter</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i> <span class="sr-only">LinkedIn</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i> <span class="sr-only">Facebook</span>
+                        </a>
                     </div>
                 </div>
             </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                 <p>&copy; <span id="copyright-year">2025</span> PropVista. All rights reserved. Website content is informational and does not constitute legal or financial advice.</p>
+             </div>
         </div>
-    </div>
-</section>
-        
-         </div> <footer class="bg-gray-900 text-white py-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-4 gap-8">
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">PropVista</h3>
-                        <p class="text-gray-400 text-sm">
-                            An AI tool designed to assist users in summarising and understanding Australian strata reports. Informational purposes only.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-medium mb-4">Quick Links</h4>
-                        <ul class="space-y-2 text-gray-400 text-sm">
-                            <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
-                            <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
-                            <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li> <li><a href="#" id="footerLoginBtn" class="hover:text-white transition-colors">Login / App</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-medium mb-4">Legal</h4>
-                        <ul class="space-y-2 text-gray-400 text-sm">
-                            <li><a href="#legal-privacy" id="privacyLinkFooter" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                            <li><a href="#legal-terms" id="termsLinkFooter" class="hover:text-white transition-colors">Terms of Service</a></li>
-                            <li><a href="#legal-disclaimer" id="disclaimerLinkFooter" class="hover:text-white transition-colors">Disclaimer</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-medium mb-4">Connect</h4>
-                        <ul class="space-y-2 text-gray-400 text-sm">
-                            <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li> <li><a href="#" class="hover:text-white transition-colors">Support</a></li> </ul>
-                        <div class="mt-6 flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                                <i class="fab fa-twitter text-xl"></i> <span class="sr-only">Twitter</span>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                                <i class="fab fa-linkedin text-xl"></i> <span class="sr-only">LinkedIn</span>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                                <i class="fab fa-facebook text-xl"></i> <span class="sr-only">Facebook</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-                    <p>&copy; 2025 PropVista. All rights reserved. Website content is informational and does not constitute legal or financial advice.</p>
-                    <div id="legal-privacy" class="sr-only">Privacy Policy Section Target</div>
-                    <div id="legal-terms" class="sr-only">Terms of Service Section Target</div>
-                    <div id="legal-disclaimer" class="sr-only">Disclaimer Section Target (maybe point to #disclaimer-section instead?)</div>
-                </div>
-            </div>
      </footer>
 
     <div id="appContainer" class="app-container">
-        <iframe id="appFrame" src="https://australianstrata.streamlit.app?embed=true&toolbar=hidden&embedded=true"></iframe>
+         <iframe id="appFrame" src="about:blank"></iframe>  
     </div>
 
     <script>
@@ -418,40 +421,42 @@
             const appFrame = document.getElementById('appFrame');
             const footerElement = document.querySelector('footer');
 
+            // Disclaimer toggle
             const readMoreBtn = document.getElementById('readMoreBtn');
             const readLessBtn = document.getElementById('readLessBtn');
             const fullDisclaimer = document.getElementById('fullDisclaimer');
-            
+
             if (readMoreBtn && fullDisclaimer && readLessBtn) {
                 readMoreBtn.addEventListener('click', function(e) {
                     e.preventDefault();
                     fullDisclaimer.classList.remove('hidden');
-                    readMoreBtn.classList.add('hidden');
+                    readMoreBtn.classList.add('hidden'); // Hide "Read more"
                 });
-                
+
                 readLessBtn.addEventListener('click', function(e) {
                     e.preventDefault();
                     fullDisclaimer.classList.add('hidden');
-                    readMoreBtn.classList.remove('hidden');
+                    readMoreBtn.classList.remove('hidden'); // Show "Read more" again
                 });
             }
 
-
+            // Fade-in animation observer
             try {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.style.opacity = 1;
                             entry.target.style.transform = 'translateY(0)';
-                            observer.unobserve(entry.target);
+                            observer.unobserve(entry.target); // Animate only once
                         }
                     });
-                }, { threshold: 0.1 });
+                }, { threshold: 0.1 }); // Trigger when 10% visible
 
                 document.querySelectorAll('.animate-fade-in').forEach(el => {
-                    el.style.opacity = 0;
-                    el.style.transform = 'translateY(20px)';
+                    el.style.opacity = 0; // Start hidden
+                    el.style.transform = 'translateY(20px)'; // Start slightly lower
                     el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                    // Apply delays based on class
                     const delayClass = Array.from(el.classList).find(cls => cls.startsWith('delay-'));
                     if (delayClass) {
                         const delayTime = parseInt(delayClass.split('-')[1], 10) / 1000;
@@ -460,103 +465,92 @@
                     observer.observe(el);
                 });
             } catch (e) {
+                // Fallback if IntersectionObserver fails
                 console.error("IntersectionObserver failed:", e);
                  document.querySelectorAll('.animate-fade-in').forEach(el => { el.style.opacity = 1; el.style.transform = 'translateY(0)'; });
             }
 
-
+            // App loading logic
             let iframeLoaded = false;
+            const appSrc = "https://australianstrata.streamlit.app?embed=true&toolbar=hidden&embedded=true"; // Define app URL
 
             function showApp() {
                 console.log("Showing App...");
-                if (landingContent) {
-                    landingContent.style.display = 'none';
-                }
-                if (footerElement) {
-                    footerElement.style.display = 'none';
-                }
+                if (landingContent) landingContent.style.display = 'none';
+                if (footerElement) footerElement.style.display = 'none';
+
                 if (appContainer) {
                     appContainer.style.display = 'block';
-                    
-                    // Only set the src if it hasn't been loaded yet
-                    if (!iframeLoaded) {
-                        appFrame.src = "https://australianstrata.streamlit.app?embed=true&toolbar=hidden&embedded=true";
-                        iframeLoaded = true;
+                    // Load iframe src only when needed and if not already loaded
+                    if (!iframeLoaded && appFrame.src === 'about:blank') {
+                         console.log("Loading iframe source...");
+                         appFrame.src = appSrc;
+                         iframeLoaded = true; // Consider setting this true only on iframe's 'load' event if needed
                     }
                 }
-                window.scrollTo(0, 0);
+                 window.scrollTo(0, 0); // Scroll to top when app shows
             }
 
-
+            // Button listeners to show the app
             function addButtonListener(id, callback) {
                 const button = document.getElementById(id);
                 if (button) {
-                    button.addEventListener('click', callback);
+                    button.addEventListener('click', (e) => {
+                       e.preventDefault(); // Prevent default link behavior if it's an anchor
+                       callback();
+                    });
+                } else {
+                   // console.warn(`Button with ID "${id}" not found.`); // Optional warning
                 }
             }
 
             addButtonListener('loginBtn', showApp);
-            addButtonListener('demoBtn', showApp);
+            addButtonListener('heroAppBtn', showApp); // Listener for hero dropdown link
             addButtonListener('ctaAppBtn', showApp);
             addButtonListener('footerLoginBtn', showApp);
+            // Removed 'demoBtn' listener as the button doesn't exist
 
-            // Sample download tracking
-            const sampleLinks = document.querySelectorAll('a[href$=".pdf"]');
+            // Sample download tracking (optional)
+            const sampleLinks = document.querySelectorAll('a[download]'); // More specific selector
             sampleLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
+                    // Don't preventDefault for downloads
                     console.log(`Downloading sample: ${this.getAttribute('href')}`);
-                    // You could add analytics tracking here
+                    // Add analytics tracking here if needed
                 });
             });
 
-            function addSmoothScrollListener(selector, targetId, isLegalLink = false) {
-                document.querySelectorAll(selector).forEach(link => {
-
-                    const targetElement = document.getElementById(targetId);
-
-                    const effectiveTargetElement = (targetId === 'legal-disclaimer') ? document.getElementById('disclaimer-section') : targetElement;
-
-                    if (link && effectiveTargetElement) {
-                        link.addEventListener('click', function(event) {
-                            event.preventDefault();
-                            if (landingContent.style.display !== 'none') {
-                                if (isLegalLink && (targetId === 'legal-privacy' || targetId === 'legal-terms')) {
-
-
-                                    console.warn(`Scrolling to legal section placeholder in footer: ${targetId}. Replace with actual link/page.`);
-                                    document.querySelector('footer').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                } else {
-
-                                    effectiveTargetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                 }
-                            } else if (isLegalLink) {
-
-                                console.warn(`Legal link clicked while app visible: ${targetId}. Implement modal or new tab.`);
-
-
-                            }
-                        });
-                     } else if (link && !effectiveTargetElement) {
-                         console.warn(`Smooth scroll target element not found for selector "${selector}" targeting "#${targetId}"`);
+            // Smooth Scroll for internal links only
+            function addSmoothScrollListener(selector, targetId) {
+                 document.querySelectorAll(selector).forEach(link => {
+                     const targetElement = document.getElementById(targetId);
+                     if (link && targetElement) {
+                         link.addEventListener('click', function(event) {
+                             // Only prevent default and scroll if the landing page is visible
+                             if (landingContent && landingContent.style.display !== 'none') {
+                                 event.preventDefault();
+                                 targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                             }
+                             // If landing page is hidden (app is visible), let the default browser behavior handle the hash change (though it might not be useful)
+                         });
+                     } else if (link && !targetElement) {
+                         console.warn(`Smooth scroll target element "#${targetId}" not found for selector "${selector}"`);
                      }
-                });
-            }
+                 });
+             }
 
+            // Add smooth scroll ONLY for internal page links
             addSmoothScrollListener('#learnMoreBtn', 'features');
             addSmoothScrollListener('a[href="#features"]', 'features');
             addSmoothScrollListener('a[href="#how-it-works"]', 'how-it-works');
+            addSmoothScrollListener('#disclaimerLinkFooter', 'disclaimer-section'); // Corrected target ID
 
 
-            addSmoothScrollListener('#privacyLinkFooter', 'legal-privacy', true);
-            addSmoothScrollListener('#termsLinkFooter', 'legal-terms', true);
-            addSmoothScrollListener('#disclaimerLinkFooter', 'legal-disclaimer', true);
-
-
-            const disclaimerBox = document.querySelector('.disclaimer-box');
-             if(disclaimerBox){
-                 addSmoothScrollListener('.disclaimer-box a[href="#legal-terms"]', 'legal-terms', true);
-                 addSmoothScrollListener('.disclaimer-box a[href="#legal-privacy"]', 'legal-privacy', true);
-             }
+            // Update Copyright Year Dynamically
+            const yearSpan = document.getElementById('copyright-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
 
         });
     </script>
