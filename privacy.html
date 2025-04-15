@@ -26,7 +26,7 @@
         <p><strong>Effective Date:</strong> April 15, 2025</p>
         <p><strong>Last Updated:</strong> April 15, 2025</p>
 
-        <p><em>This policy explains how we collect and use your information. We collect account details, uploaded strata reports, and your queries. We attempt to redact personal information like names and emails before analysis, but this process isn't perfect. We send redacted text to Google Gemini (which operates servers outside Australia) for AI analysis. Generated reports are stored for 24 hours, then deleted. You have rights to access and correct your personal information.</em></p>
+        <p><em>This policy explains how we collect and use your information. We collect account details, uploaded strata reports, and your queries. We attempt to redact personal information like names and emails before analysis, but this process isn't perfect. We send redacted text to Google Gemini (which operates servers outside Australia) for AI analysis. Generated reports are not stored. You have rights to access and correct your personal information.</em></p>
 
         <h2>1. Introduction</h2>
         <p>1.1. PropVista Pty Ltd ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, store, and protect your Personal Information when you use our web application (PropVista.au) (the "Service").</p>
@@ -126,12 +126,9 @@
             <li>Using temporary file handling for uploaded PDFs, deleting them after initial processing.</li>
         </ul>
         <h3>8.2. Generated Reports:</h3>
-        <p>Generated PDF reports are stored in our secured "static/" directory with the following protections:</p>
         <ul>
             <li>Reports are accessible only via unique download links provided to the authenticated user who generated them.</li>
-            <li>Access to the directory is restricted using proper permissions and server configuration.</li>
-            <li>All reports are automatically deleted after 24 hours.</li>
-            <li>Regular security scans of the storage system are conducted.</li>
+            <li>Reports are not stored on the server.</li>
         </ul>
          <h3>8.3. Data Breach Response:</h3>
          <p>In the event of a data breach that may affect your Personal Information, we will:</p>
@@ -145,7 +142,7 @@
         <h2>9. Data Retention</h2>
         <p>9.1. <strong>Session Data:</strong> Information stored in your active session state (redacted chunks, embeddings, chat history, temporary report content) is held in memory and is cleared when your session ends (e.g., upon logout, session timeout after 2 hours of inactivity, or closing the browser tab/window).</p>
         <p>9.2. <strong>Uploaded PDFs:</strong> Original Uploaded PDFs are stored only temporarily during the initial reading and text extraction process (typically less than 1 minute) and are deleted immediately thereafter.</p>
-        <p>9.3. <strong>Generated Reports:</strong> Generated PDF reports stored on the server filesystem for download are retained for 24 hours after creation to facilitate download, after which they are automatically deleted by our cleanup system.</p>
+        <p>9.3. <strong>Generated Reports:</strong> Generated PDF reports are not stored on the server.</p>
         <p>9.4. <strong>Account Information:</strong> We retain your account credentials as long as your account is active or as needed to comply with legal obligations. Inactive accounts may be deleted after 12 months of non-use.</p>
         <p>9.5. <strong>Logs:</strong> Application logs are retained for 30 days for troubleshooting, security analysis, and usage monitoring, then automatically deleted. Error logs containing user-specific information are anonymized after 7 days.</p>
         <p>9.6. <strong>Google Gemini:</strong> According to Google's standard data processing terms for the Gemini API, your data sent for processing is typically retained for a limited time to process your request. For specific details about Google's retention policies, please review Google's privacy documentation.</p>
