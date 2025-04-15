@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - PropVista</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .content-container { max-width: 800px; margin: 2rem auto; padding: 2rem; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1, h2, h3 { margin-bottom: 1rem; font-weight: 600; color: #1F2937; }
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; margin-top: 1.5rem; }
+        h3 { font-size: 1.2em; margin-top: 1rem; }
+        p, li { margin-bottom: 0.75rem; line-height: 1.6; color: #374151; }
+        ul { list-style: disc; margin-left: 1.5rem; }
+        strong { font-weight: 600; }
+        a { color: #4F46E5; text-decoration: underline; }
+        a:hover { color: #4338CA; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="content-container">
+        <h1>Privacy Policy</h1>
+        <p><strong>Effective Date:</strong> April 15, 2025</p>
+        <p><strong>Last Updated:</strong> April 15, 2025</p>
+
+        <p><em>This policy explains how we collect and use your information. We collect account details, uploaded strata reports, and your queries. We attempt to redact personal information like names and emails before analysis, but this process isn't perfect. We send redacted text to Google Gemini (which operates servers outside Australia) for AI analysis. Generated reports are stored for 24 hours, then deleted. You have rights to access and correct your personal information.</em></p>
+
+        <h2>1. Introduction</h2>
+        <p>1.1. PropVista Pty Ltd ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, store, and protect your Personal Information when you use our web application (PropVista.au) (the "Service").</p>
+        <p>1.2. We comply with the Australian Privacy Act 1988 (Cth) (the "Privacy Act") and the Australian Privacy Principles (APPs).</p>
+        <p>1.3. By accessing or using the Service, you consent to the collection, use, disclosure, and storage of your information as described in this Privacy Policy and our <a href="terms.html" target="_blank">Terms of Service</a>. Please read this policy carefully.</p>
+
+        <h2>2. What is Personal Information?</h2>
+        <p>2.1. "Personal Information" means information or an opinion about an identified individual, or an individual who is reasonably identifiable, whether the information or opinion is true or not, and whether recorded in a material form or not (as defined in the Privacy Act). This can include names, addresses, email addresses, financial information, and potentially other details found within Strata Reports or provided by you.</p>
+
+        <h2>3. Information We Collect</h2>
+        <p>We collect information necessary to provide and improve the Service. This includes:</p>
+        <h3>3.1. Information You Provide Directly:</h3>
+        <ul>
+            <li><strong>Account Information:</strong> When you register, we collect your username and hashed password (managed via streamlit-authenticator and stored according to Streamlit Cloud practices).</li>
+            <li><strong>Uploaded Strata Reports:</strong> You upload PDF Strata Reports ("Uploaded Reports"). These reports often contain Personal Information about various individuals (e.g., owners, committee members, strata managers), including names, addresses, financial details (levies, balances), email addresses, and potentially phone numbers.</li>
+            <li><strong>User Queries:</strong> We collect the questions and prompts you submit to the Service's chat interface.</li>
+            <li><strong>Communications:</strong> If you contact us directly (e.g., via email), we collect information contained in your communications.</li>
+        </ul>
+        <h3>3.2. Information Processed by the Service:</h3>
+        <ul>
+            <li><strong>Extracted Text:</strong> Text content extracted from Uploaded Reports.</li>
+            <li><strong>Redacted Text:</strong> Text content from which we attempt to automatically identify and redact certain PII (currently names and email addresses) using tools like Presidio. Addresses and financial figures are generally not redacted.</li>
+            <li><strong>Generated Content:</strong> The AI-generated answers, Full Reports, and Summary Reports derived from processing the (redacted) Uploaded Reports and your queries.</li>
+        </ul>
+        <h3>3.3. Information Collected Automatically:</h3>
+        <ul>
+            <li><strong>Log Data:</strong> Like most web services, we automatically collect log information about your use of the Service, such as IP address, browser type, operating system, access times, pages viewed, actions taken (e.g., uploads, report generation), and error logs (stored in app.log).</li>
+            <li><strong>Cookies:</strong> We use cookies for session management and authentication (via streamlit-authenticator). Cookies are small data files stored on your device. You can usually modify your browser setting to decline cookies if you prefer.</li>
+        </ul>
+
+        <h2>4. How We Use Your Information</h2>
+        <p>We use the information we collect for the following purposes:</p>
+        <h3>4.1. To Provide and Operate the Service:</h3>
+        <ul>
+            <li>Authenticate users and manage accounts.</li>
+            <li>Receive, process (including text extraction and PII redaction), and temporarily store Uploaded Reports.</li>
+            <li>Facilitate interaction with the AI (Google Gemini) to answer queries and generate reports based on redacted content.</li>
+            <li>Generate and provide download links for Generated Content during your active session.</li>
+            <li>Maintain and manage user sessions.</li>
+        </ul>
+        <h3>4.2. To Improve the Service:</h3>
+        <ul>
+            <li>Analyse usage patterns and log data to understand how the Service is used, diagnose technical issues, and improve functionality (using anonymised or aggregated data where feasible).</li>
+        </ul>
+        <h3>4.3. To Communicate with You:</h3>
+        <ul>
+            <li>Respond to your inquiries and support requests.</li>
+            <li>Send service-related announcements (if necessary).</li>
+        </ul>
+        <h3>4.4. For Security and Compliance:</h3>
+        <ul>
+            <li>Monitor for and prevent fraudulent or unauthorised activity.</li>
+            <li>Comply with legal obligations.</li>
+        </ul>
+
+        <h2>5. PII Redaction Process and Limitations</h2>
+         <p>5.1. We use automated tools (Presidio AnalyzerEngine and AnonymizerEngine) to attempt to identify and redact specific types of Personal Information – primarily person names and email addresses – from the text extracted from Uploaded Reports before it is used for detailed analysis or sent to the AI (Google Gemini).</p>
+         <p>5.2. <strong>Limitations:</strong> Automated redaction is not foolproof. It may fail to identify some names/emails or incorrectly redact other text.</p>
+         <p>5.3. Significant Personal Information, such as property addresses and financial details (levy amounts, budgets, balances), is intentionally <strong>not redacted</strong> by this process, as it is often essential for the strata report analysis you request.</p>
+         <p>5.4. We also instruct the AI (Google Gemini) via prompts not to output specific PII types as a secondary precaution, but this relies on the AI's compliance and is not guaranteed.</p>
+         <p>5.5. By using the Service, you acknowledge and accept the limitations of our automated PII redaction process.</p>
+         <p>5.6. If you are concerned about specific sensitive information in your strata report, we recommend you <strong>manually redact this information before uploading</strong> the document.</p>
+
+        <h2>6. Data Sharing and Disclosure</h2>
+        <p>We do not sell your Personal Information. We may share your information in the following limited circumstances:</p>
+        <h3>6.1. Third-Party Service Providers:</h3>
+        <ul>
+            <li><strong>Google Gemini:</strong> We send redacted text chunks from Uploaded Reports, your queries, and content from generated reports (for summarisation) to Google's Generative AI (Gemini) API for processing to provide the core analysis and generation features of the Service. This constitutes a disclosure to Google. Google's handling of this data is subject to its own terms and privacy policies (refer to Google Cloud's data processing terms).</li>
+            <li><strong>Hosting Provider:</strong> The application is hosted on Streamlit Cloud, which stores application data and logs according to its security practices.</li>
+            <li><strong>Other Providers:</strong> We may use other vendors for functions like logging or analytics, who process data on our behalf under confidentiality agreements.</li>
+        </ul>
+        <h3>6.2. Legal Requirements:</h3>
+        <p>We may disclose your information if required by law, subpoena, court order, or other governmental request, or when we believe in good faith that disclosure is necessary to protect our rights, protect your safety or the safety of others, investigate fraud, or respond to a government request.</p>
+        <h3>6.3. Business Transfers:</h3>
+        <p>If we are involved in a merger, acquisition, or sale of all or a portion of our assets, your information may be transferred as part of that transaction, subject to confidentiality arrangements.</p>
+
+        <h2>7. Cross-Border Disclosure of Personal Information</h2>
+        <p>7.1. Providing the Service involves disclosing information to third parties located outside of Australia. Specifically, when we send redacted report content and queries to Google Gemini for processing, this data is transferred to and processed on servers located outside Australia (primarily in the USA or other locations where Google operates data centres).</p>
+        <p>7.2. To protect your information in accordance with Australian Privacy Principle 8, we take the following steps:</p>
+        <ul>
+            <li>We maintain a Data Processing Agreement with Google that includes privacy protections.</li>
+            <li>We only send redacted text (with names and emails attempted to be removed) to Google.</li>
+            <li>Google Cloud Platform, which powers the Gemini API, maintains various security certifications including ISO 27001, SOC 2/3, and others.</li>
+            <li>We regularly review Google's compliance documentation and security practices.</li>
+        </ul>
+        <p>7.3. Despite these measures, we cannot guarantee that overseas recipients will handle your Personal Information in complete compliance with the Australian Privacy Principles. By using the Service, you acknowledge this risk.</p>
+        <p>7.4. If you do not consent to this cross-border disclosure, you should not use the Service, as this transfer is essential to our core functionality.</p>
+
+        <h2>8. Data Security</h2>
+        <p>8.1. We implement reasonable technical and organisational measures to protect your Personal Information from unauthorized access, use, disclosure, alteration, or destruction. These include:</p>
+        <ul>
+            <li>User authentication and password hashing.</li>
+            <li>Attempted PII redaction before AI processing.</li>
+            <li>Using HTTPS for all data transmission between your browser and our server, and between our server and Google Gemini.</li>
+            <li>Storing sensitive credentials (API keys, user secrets) using secure mechanisms.</li>
+            <li>Implementing session management with timeouts and clearing session state upon logout.</li>
+            <li>Using temporary file handling for uploaded PDFs, deleting them after initial processing.</li>
+        </ul>
+        <h3>8.2. Generated Reports:</h3>
+        <p>Generated PDF reports are stored in our secured "static/" directory with the following protections:</p>
+        <ul>
+            <li>Reports are accessible only via unique download links provided to the authenticated user who generated them.</li>
+            <li>Access to the directory is restricted using proper permissions and server configuration.</li>
+            <li>All reports are automatically deleted after 24 hours.</li>
+            <li>Regular security scans of the storage system are conducted.</li>
+        </ul>
+         <h3>8.3. Data Breach Response:</h3>
+         <p>In the event of a data breach that may affect your Personal Information, we will:</p>
+         <ul>
+            <li>Investigate the breach promptly.</li>
+            <li>Notify affected users within 30 days if required by the Privacy Act.</li>
+            <li>Take steps to remediate the breach and prevent recurrence.</li>
+        </ul>
+        <p>8.4. <strong>No Method is Perfect:</strong> Despite our efforts, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security.</p>
+
+        <h2>9. Data Retention</h2>
+        <p>9.1. <strong>Session Data:</strong> Information stored in your active session state (redacted chunks, embeddings, chat history, temporary report content) is held in memory and is cleared when your session ends (e.g., upon logout, session timeout after 2 hours of inactivity, or closing the browser tab/window).</p>
+        <p>9.2. <strong>Uploaded PDFs:</strong> Original Uploaded PDFs are stored only temporarily during the initial reading and text extraction process (typically less than 1 minute) and are deleted immediately thereafter.</p>
+        <p>9.3. <strong>Generated Reports:</strong> Generated PDF reports stored on the server filesystem for download are retained for 24 hours after creation to facilitate download, after which they are automatically deleted by our cleanup system.</p>
+        <p>9.4. <strong>Account Information:</strong> We retain your account credentials as long as your account is active or as needed to comply with legal obligations. Inactive accounts may be deleted after 12 months of non-use.</p>
+        <p>9.5. <strong>Logs:</strong> Application logs are retained for 30 days for troubleshooting, security analysis, and usage monitoring, then automatically deleted. Error logs containing user-specific information are anonymized after 7 days.</p>
+        <p>9.6. <strong>Google Gemini:</strong> According to Google's standard data processing terms for the Gemini API, your data sent for processing is typically retained for a limited time to process your request. For specific details about Google's retention policies, please review Google's privacy documentation.</p>
+
+        <h2>10. Your Rights (Access, Correction, Complaints)</h2>
+        <p>10.1. Under the Privacy Act, you have the right to:</p>
+        <ul>
+            <li>Request access to the Personal Information we hold about you.</li>
+            <li>Request correction of inaccurate, out-of-date, incomplete, irrelevant, or misleading Personal Information we hold about you.</li>
+            <li>Request deletion of your personal information (subject to certain exceptions).</li>
+        </ul>
+        <p>10.2. To exercise these rights, please contact us at <a href="mailto:support@PropVista.au">support@PropVista.au</a>. We will respond to your request within 30 days. We may need to verify your identity before processing your request. There may be circumstances under the Privacy Act where we are unable to provide access or make corrections.</p>
+        <p>10.3. If you believe we have breached the Australian Privacy Principles, please contact us with details of the alleged breach. We will investigate your complaint and respond within 30 days.</p>
+        <p>10.4. If you are not satisfied with our response, you have the right to lodge a complaint with the Office of the Australian Information Commissioner (OAIC) at <a href="https://www.oaic.gov.au" target="_blank" rel="noopener noreferrer">www.oaic.gov.au</a>.</p>
+
+        <h2>11. Cookies</h2>
+        <p>11.1. We use cookies primarily for authentication and session management via the streamlit-authenticator library. These are essential for the Service to function securely.</p>
+        <p>11.2. You may be able to configure your browser to refuse cookies, but this may prevent you from using parts of the Service, particularly logging in.</p>
+        <p>11.3. We do not use cookies for advertising or tracking purposes.</p>
+
+        <h2>12. Third-Party Links</h2>
+        <p>12.1. The Service may contain links to third-party websites or services (e.g., Google's terms). This Privacy Policy does not apply to those third-party sites. We encourage you to read their privacy policies.</p>
+
+        <h2>13. Children's Privacy</h2>
+        <p>13.1. The Service is not intended for use by individuals under the age of 18. We do not knowingly collect Personal Information from children under 18.</p>
+
+        <h2>14. Changes to this Privacy Policy</h2>
+        <p>14.1. We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will post the updated policy on the Service and indicate the "Last Updated" date. For significant changes, we will provide a more prominent notice, such as an email notification.</p>
+        <p>14.2. We encourage you to review this policy periodically. Your continued use of the Service after any changes indicates your acceptance of the updated Privacy Policy.</p>
+
+        <h2>15. Contact Us</h2>
+        <p>If you have any questions, concerns, or complaints about this Privacy Policy or our privacy practices, please contact us at:</p>
+        <p><a href="mailto:support@PropVista.au">support@PropVista.au</a></p>
+    </div>
+</body>
+</html>
