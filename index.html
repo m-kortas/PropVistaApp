@@ -140,21 +140,27 @@
 </head>
 <body>
     <nav class="bg-white shadow-md fixed w-full z-50 top-0 left-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">  
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <span class="text-3xl font-bold text-indigo-600">PropVista</span>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <button id="loginBtn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 transition-all">
-                        Login 
-                    </button>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20">  
+            <div class="flex items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-3xl font-bold text-indigo-600">PropVista</span>
                 </div>
             </div>
+            <!-- Combined both buttons in a single container -->
+            <div class="flex items-center space-x-4">
+                <button id="loginBtn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all">
+                    Login 
+                </button>
+                <a href="https://www.propvista.au" class="inline-block">
+                    <button id="homeBtn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all">
+                        Home Page
+                    </button>
+                </a>
+            </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <div id="landingContent" class="landing-content">  
         <section class="hero-section gradient-bg text-white flex items-center">
