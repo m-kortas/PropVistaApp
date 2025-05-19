@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PropVista - AI-Assisted Strata Report Summaries</title>
+    <title>PropVista - Understand Any Strata Report in Minutes</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -136,6 +137,19 @@
         nav {
              height: 80px; /* Fixed nav height */
         }
+
+        .australian-badge {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1F2937;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -167,11 +181,16 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="animate-fade-in">
+                       <div class="australian-badge">
+    <span class="flag-emoji">🇦🇺</span>
+    Australian Built 
+</div>
+        
                         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
-                            AI-Assisted Strata Report Summaries
+                            Understand Any Strata Report in Minutes
                         </h1>
                         <p class="mt-6 text-xl text-indigo-100">
-                            Our AI tool helps you locate key information, generate summaries & ask questions to assist your understanding, with references back to the original document. 
+                             PropVista scans your PDF strata report and instantly highlights issues with finances, maintenance, and legal matters - all with page references. Privacy-first AI for Australian property buyers. 
                         </p>
                         <div class="mt-8 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
                             <div class="dropdown">
@@ -214,15 +233,15 @@
                      </p>
                  </div>
 
-                <div class="mt-16 grid md:grid-cols-3 gap-8">
+                 <div class="mt-16 grid md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-lg shadow-lg p-6 feature-card animate-fade-in delay-200">
                         <div class="text-center">
                             <div class="inline-flex items-center justify-center p-3 bg-indigo-100 rounded-md text-indigo-600 mb-4">
-                                <i class="fas fa-chart-line text-2xl"></i>
+                                <i class="fas fa-exclamation-triangle text-2xl"></i>
                             </div>
-                            <h3 class="text-xl font-medium text-gray-900">Aids Financial Understanding</h3>
+                            <h3 class="text-xl font-medium text-gray-900">Spot Financial Red Flags Instantly</h3>
                             <p class="mt-4 text-gray-600">
-                                Helps summarise information regarding fund balances, levies, and financial statements to assist your review.
+                                Get a summary of levies, balances, and fund risks in plain English.  
                             </p>
                         </div>
                     </div>
@@ -230,11 +249,11 @@
                     <div class="bg-white rounded-lg shadow-lg p-6 feature-card animate-fade-in delay-300">
                         <div class="text-center">
                             <div class="inline-flex items-center justify-center p-3 bg-green-100 rounded-md text-green-600 mb-4">
-                                <i class="fas fa-tools text-2xl"></i>
+                                <i class="fas fa-wrench text-2xl"></i>
                             </div>
-                            <h3 class="text-xl font-medium text-gray-900">Highlights Maintenance Points</h3>
+                            <h3 class="text-xl font-medium text-gray-900">Catch Costly Maintenance Issues Early</h3>
                             <p class="mt-4 text-gray-600">
-                                Assists in identifying mentions of maintenance records, defects, planned works, and insurance details for your review.
+                                We highlight mentions of defects, upcoming works, and insurance gaps.  
                             </p>
                         </div>
                     </div>
@@ -244,9 +263,9 @@
                             <div class="inline-flex items-center justify-center p-3 bg-amber-100 rounded-md text-amber-600 mb-4">
                                 <i class="fas fa-gavel text-2xl"></i>
                             </div>
-                            <h3 class="text-xl font-medium text-gray-900">Summarises Legal & Compliance Info</h3>
+                            <h3 class="text-xl font-medium text-gray-900">Identify Potential Legal Issues</h3>
                             <p class="mt-4 text-gray-600">
-                                Helps summarise potential legal disputes, meeting minutes, and compliance details mentioned in the report.
+                                Identify potencial disputes, compliance issues, and AGM notes that may affect your decision. 
                             </p>
                         </div>
                     </div>
@@ -258,10 +277,9 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center animate-fade-in">
                      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                         How PropVista Works
-                     </h2>
+ How It Works - Simple and Secure                      </h2>
                      <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-                         Get AI-generated summaries from your strata reports in three steps.
+                          Get clear insights from your strata report in three easy steps. 
                      </p>
                  </div>
 
@@ -309,123 +327,7 @@
             </div>
         </section>
 
-
-
-        <section id="comparison" class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center animate-fade-in">
-      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-        How Is This Different from Just Using ChatGPT?
-      </h2>
-      <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-        PropVista is purpose-built for Australian strata report analysis, with tailored features that prioritize relevance, privacy, and document traceability.
-      </p>
-    </div>
-
-    <div class="mt-12 grid md:grid-cols-2 gap-8 animate-fade-in delay-200">
-      <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
-        <div class="flex items-start">
-          <div class="flex-shrink-0">
-            <div class="inline-flex items-center justify-center p-3 bg-green-100 rounded-md text-green-600">
-              <i class="fas fa-check-circle text-xl"></i>
-            </div>
-          </div>
-          <div class="ml-4">
-            <h3 class="text-lg font-medium text-gray-900">Reference-Based Responses</h3>
-            <p class="mt-2 text-gray-600">
-              Unlike general chatbots, PropVista focuses on the uploaded strata report content, helping reduce irrelevant or speculative answers.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
-        <div class="flex items-start">
-          <div class="flex-shrink-0">
-            <div class="inline-flex items-center justify-center p-3 bg-green-100 rounded-md text-green-600">
-              <i class="fas fa-map-pin text-xl"></i>
-            </div>
-          </div>
-          <div class="ml-4">
-            <h3 class="text-lg font-medium text-gray-900">Traceable Insights</h3>
-            <p class="mt-2 text-gray-600">
-              Each response is accompanied by page numbers and in-text citations, allowing users to verify and explore insights directly in the source PDF.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
-        <div class="flex items-start">
-          <div class="flex-shrink-0">
-            <div class="inline-flex items-center justify-center p-3 bg-green-100 rounded-md text-green-600">
-              <i class="fas fa-user-shield text-xl"></i>
-            </div>
-          </div>
-          <div class="ml-4">
-            <h3 class="text-lg font-medium text-gray-900">Privacy-Conscious Design</h3>
-            <p class="mt-2 text-gray-600">
-              PropVista automatically redacts common types of personally identifiable information (PII), helping maintain privacy and confidentiality - something not offered by general AI tools out of the box.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
-        <div class="flex items-start">
-          <div class="flex-shrink-0">
-            <div class="inline-flex items-center justify-center p-3 bg-green-100 rounded-md text-green-600">
-              <i class="fas fa-clipboard-check text-xl"></i>
-            </div>
-          </div>
-          <div class="ml-4">
-            <h3 class="text-lg font-medium text-gray-900">Structured for Key Review Areas</h3>
-            <p class="mt-2 text-gray-600">
-              Covers high-priority topics like finance, maintenance, legal matters, and compliance using a predefined checklist aligned to common buyer concerns.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
-        <div class="flex items-start">
-          <div class="flex-shrink-0">
-            <div class="inline-flex items-center justify-center p-3 bg-green-100 rounded-md text-green-600">
-              <i class="fas fa-map-marked-alt text-xl"></i>
-            </div>
-          </div>
-          <div class="ml-4">
-            <h3 class="text-lg font-medium text-gray-900">Built for Australian Strata</h3>
-            <p class="mt-2 text-gray-600">
-              PropVista has been fine-tuned with awareness of how strata documents are typically structured in Australia, improving the relevance of extracted insights.
-            </p>
-          </div>
-        </div>
-      </div>
-
-     
-      <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
-        <div class="flex items-start">
-          <div class="flex-shrink-0">
-            <div class="inline-flex items-center justify-center p-3 bg-green-100 rounded-md text-green-600">
-              <i class="fas fa-server text-xl"></i>
-            </div>
-          </div>
-          <div class="ml-4">
-            <h3 class="text-lg font-medium text-gray-900">Stable & Scalable Platform</h3>
-            <p class="mt-2 text-gray-600">
-              Designed to perform consistently even with complex or lengthy strata documents. Actual performance may vary depending on file structure and content quality.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-        
-        <section class="py-16 gradient-bg text-white">
+    <section class="py-16 gradient-bg text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl animate-fade-in">
                      Subscribe
@@ -450,6 +352,89 @@
 </div>
             </div>
         </section>
+
+        <section id="comparison" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center animate-fade-in">
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        Why PropVista is Better Than General AI Tools
+      </h2>
+      <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+        Purpose-built for Australian strata reports, with features that prioritise accuracy, privacy, and buyer-focused insights.
+      </p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-8 animate-fade-in delay-200">
+      <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <div class="inline-flex items-center justify-center p-3 bg-green-100 rounded-md text-green-600">
+              <i class="fas fa-home text-xl"></i>
+            </div>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-medium text-gray-900">Built for Strata Reports</h3>
+            <p class="mt-2 text-gray-600">
+              Not a general chatbot. It understands how Australian strata documents are structured and compliance requirements work.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <div class="inline-flex items-center justify-center p-3 bg-green-100 rounded-md text-green-600">
+              <i class="fas fa-link text-xl"></i>
+            </div>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-medium text-gray-900">Cites the Source</h3>
+            <p class="mt-2 text-gray-600">
+              Every insight links back to page numbers in your actual document. No guesswork -  verify everything yourself.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <div class="inline-flex items-center justify-center p-3 bg-green-100 rounded-md text-green-600">
+              <i class="fas fa-user-shield text-xl"></i>
+            </div>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-medium text-gray-900">Redacts Private Data</h3>
+            <p class="mt-2 text-gray-600">
+              Sensitive details are automatically removed before analysis. On-device redaction and limited data retention protect your privacy.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg p-6 feature-card">
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <div class="inline-flex items-center justify-center p-3 bg-green-100 rounded-md text-green-600">
+              <i class="fas fa-bullseye text-xl"></i>
+            </div>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-medium text-gray-900">Focused on What Buyers Care About</h3>
+            <p class="mt-2 text-gray-600">
+              Covers finances, legal risks, maintenance issues -  all in one place. No need to read 60 pages to find the essentials.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+        
+    
 
 
         <section id="disclaimer-section" class="py-8 bg-white">
