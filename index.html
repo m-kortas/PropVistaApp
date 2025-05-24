@@ -161,7 +161,6 @@
                     <span class="text-3xl font-bold text-indigo-600">PropVista</span>
                 </div>
             </div>
-            <!-- Combined both buttons in a single container -->
             <div class="flex items-center space-x-4">
                 <button id="loginBtn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all">
                     Login 
@@ -527,7 +526,6 @@ PropVista scans your strata report, highlights key financial, maintenance, and l
                 });
             }
 
-            // Fade-in animation observer
             try {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
@@ -572,53 +570,44 @@ PropVista scans your strata report, highlights key financial, maintenance, and l
                     if (!iframeLoaded && appFrame.src === 'about:blank') {
                          console.log("Loading iframe source...");
                          appFrame.src = appSrc;
-                         iframeLoaded = true; // Consider setting this true only on iframe's 'load' event if needed
+                         iframeLoaded = true; 
                     }
                 }
-                 window.scrollTo(0, 0); // Scroll to top when app shows
+                 window.scrollTo(0, 0); 
             }
 
-            // Button listeners to show the app
             function addButtonListener(id, callback) {
                 const button = document.getElementById(id);
                 if (button) {
                     button.addEventListener('click', (e) => {
-                       e.preventDefault(); // Prevent default link behavior if it's an anchor
+                       e.preventDefault(); 
                        callback();
                     });
                 } else {
-                   // console.warn(`Button with ID "${id}" not found.`); // Optional warning
                 }
             }
 
             addButtonListener('loginBtn', showApp);
-            addButtonListener('heroAppBtn', showApp); // Listener for hero dropdown link
+            addButtonListener('heroAppBtn', showApp); 
             addButtonListener('ctaAppBtn', showApp);
             addButtonListener('footerLoginBtn', showApp);
-            // Removed 'demoBtn' listener as the button doesn't exist
 
-            // Sample download tracking (optional)
-            const sampleLinks = document.querySelectorAll('a[download]'); // More specific selector
+            const sampleLinks = document.querySelectorAll('a[download]'); 
             sampleLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
-                    // Don't preventDefault for downloads
                     console.log(`Downloading sample: ${this.getAttribute('href')}`);
-                    // Add analytics tracking here if needed
                 });
             });
 
-            // Smooth Scroll for internal links only
             function addSmoothScrollListener(selector, targetId) {
                  document.querySelectorAll(selector).forEach(link => {
                      const targetElement = document.getElementById(targetId);
                      if (link && targetElement) {
                          link.addEventListener('click', function(event) {
-                             // Only prevent default and scroll if the landing page is visible
                              if (landingContent && landingContent.style.display !== 'none') {
                                  event.preventDefault();
                                  targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                              }
-                             // If landing page is hidden (app is visible), let the default browser behavior handle the hash change (though it might not be useful)
                          });
                      } else if (link && !targetElement) {
                          console.warn(`Smooth scroll target element "#${targetId}" not found for selector "${selector}"`);
@@ -626,14 +615,12 @@ PropVista scans your strata report, highlights key financial, maintenance, and l
                  });
              }
 
-            // Add smooth scroll ONLY for internal page links
             addSmoothScrollListener('#learnMoreBtn', 'features');
             addSmoothScrollListener('a[href="#features"]', 'features');
             addSmoothScrollListener('a[href="#how-it-works"]', 'how-it-works');
             addSmoothScrollListener('#disclaimerLinkFooter', 'disclaimer-section'); // Corrected target ID
 
 
-            // Update Copyright Year Dynamically
             const yearSpan = document.getElementById('copyright-year');
             if (yearSpan) {
                 yearSpan.textContent = new Date().getFullYear();
@@ -642,13 +629,11 @@ PropVista scans your strata report, highlights key financial, maintenance, and l
         });
     </script><script>
    document.addEventListener('DOMContentLoaded', function() {
-       // ... your existing script logic for animations, disclaimer, etc.
        const landingContent = document.getElementById('landingContent');
        const appContainer = document.getElementById('appContainer');
        const appFrame = document.getElementById('appFrame');
        const footerElement = document.querySelector('footer');
 
-       // Disclaimer toggle
        const readMoreBtn = document.getElementById('readMoreBtn');
        const readLessBtn = document.getElementById('readLessBtn');
        const fullDisclaimer = document.getElementById('fullDisclaimer');
@@ -657,33 +642,31 @@ PropVista scans your strata report, highlights key financial, maintenance, and l
            readMoreBtn.addEventListener('click', function(e) {
                e.preventDefault();
                fullDisclaimer.classList.remove('hidden');
-               readMoreBtn.classList.add('hidden'); // Hide "Read more"
+               readMoreBtn.classList.add('hidden'); 
            });
 
            readLessBtn.addEventListener('click', function(e) {
                e.preventDefault();
                fullDisclaimer.classList.add('hidden');
-               readMoreBtn.classList.remove('hidden'); // Show "Read more" again
+               readMoreBtn.classList.remove('hidden'); 
            });
        }
 
-       // Fade-in animation observer
        try {
            const observer = new IntersectionObserver((entries) => {
                entries.forEach(entry => {
                    if (entry.isIntersecting) {
                        entry.target.style.opacity = 1;
                        entry.target.style.transform = 'translateY(0)';
-                       observer.unobserve(entry.target); // Animate only once
+                       observer.unobserve(entry.target); 
                    }
                });
-           }, { threshold: 0.1 }); // Trigger when 10% visible
+           }, { threshold: 0.1 }); 
 
            document.querySelectorAll('.animate-fade-in').forEach(el => {
-               el.style.opacity = 0; // Start hidden
+               el.style.opacity = 0; 
                el.style.transform = 'translateY(20px)'; // Start slightly lower
                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-               // Apply delays based on class
                const delayClass = Array.from(el.classList).find(cls => cls.startsWith('delay-'));
                if (delayClass) {
                    const delayTime = parseInt(delayClass.split('-')[1], 10) / 1000;
@@ -692,14 +675,11 @@ PropVista scans your strata report, highlights key financial, maintenance, and l
                observer.observe(el);
            });
        } catch (e) {
-           // Fallback if IntersectionObserver fails
            console.error("IntersectionObserver failed:", e);
             document.querySelectorAll('.animate-fade-in').forEach(el => { el.style.opacity = 1; el.style.transform = 'translateY(0)'; });
        }
 
-       // App loading logic (Truncated for brevity)
        let iframeLoaded = false;
-       // ... rest of your existing script
     });
 </script>
 
